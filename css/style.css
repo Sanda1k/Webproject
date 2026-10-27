@@ -4,3 +4,5 @@
 @import "./normalize.css";
 /* 2. Проектные дизайн-токены, сброс box-sizing и базовые элементы */
 @import "./base.css";
+/* 3. Компоненты, Flexbox-сетки и интерактивные состояния */
+@import "./components.css";

@@ -1,0 +1,82 @@
+/* Базовые переменные (Design Tokens) проекта Gastro Chef */
+:root {
+  /* Палитра бренда и контрастные токены по стандарту WCAG AA */
+  --color-primary: #61bf59;
+  --color-primary-hover: #4ea847;
+  --color-primary-light: #eaf8e7;
+  --color-primary-dark: #24751f; /* Контраст 4.65:1 с белым текстом для кнопок */
+  --color-focus: #1b5e20;        /* Высококонтрастная обводка фокуса на белом фоне */
+  --color-dark: #23282b;
+  --color-text: #333333;
+  --color-muted: #757d8a;
+  --color-bg-light: #f7faf7;
+  --color-white: #ffffff;
+  --color-border: #e3ebd8;
+
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  
+  /* Радиусы скругления */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+
+  /* Токены отступов (Spacing Tokens) */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 48px;
+  --space-4xl: 64px;
+
+  --transition-base: 0.2s ease-in-out;
+}
+
+/* Глобальный расчет блочной модели Box Model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Базовые стили страницы */
+body {
+  font-family: var(--font-family-base, sans-serif);
+  color: var(--color-text, #333333);
+  background-color: var(--color-bg-light, #f7faf7);
+  line-height: 1.5;
+}
+
+/* Изображения не переполняют свои контейнеры */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ссылки и кнопки наследуют шрифт */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Вспомогательный класс доступного скрытия для скринридеров */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

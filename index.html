@@ -8,53 +8,49 @@
   </head>
   <body class="page">
 
-    <!-- Шапка сайта с двухуровневой структурой для Sticky-эффекта -->
+    <!-- Верхний ярус: логотип в header (естественно уходит вверх при скролле) -->
     <header class="header">
-      <!-- Верхний уровень: большой логотип (уезжает при скролле) -->
-      <div class="header__brand">
-        <div class="container header__brand-container">
-          <a class="header__logo-link" href="index.html">
-            <span class="header__logo-title">GastroChef</span>
-            <span class="header__logo-subtitle">healthy ration</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Нижний уровень: компактная навигационная панель (залипает при скролле) -->
-      <div class="header__bar">
-        <div class="container header__bar-container">
-          <nav class="header__nav" aria-label="Основная навигация">
-            <ul class="header__nav-list">
-              <li class="header__nav-item">
-                <a class="header__nav-link" href="#programs">Программы питания</a>
-              </li>
-              <li class="header__nav-item">
-                <a class="header__nav-link" href="#lunches">Бизнес-ланчи</a>
-              </li>
-              <li class="header__nav-item">
-                <a class="header__nav-link" href="#shop">Gastro Shop</a>
-              </li>
-              <li class="header__nav-item">
-                <a class="header__nav-link" href="#about">О нас</a>
-              </li>
-              <li class="header__nav-item">
-                <a class="header__nav-link" href="#blog">Блог</a>
-              </li>
-            </ul>
-          </nav>
-
-          <div class="header__actions">
-            <div class="lang-switcher" aria-label="Выбор языка">
-              <button class="lang-switcher__button lang-switcher__button--active" type="button">RU</button>
-              <button class="lang-switcher__button" type="button">UA</button>
-              <button class="lang-switcher__button" type="button">EN</button>
-            </div>
-
-            <a class="header__phone" href="tel:+380689494919">+38 (068) 949-49-19</a>
-          </div>
-        </div>
+      <div class="container header__container">
+        <a class="header__logo-link" href="index.html">
+          <span class="header__logo-title">GastroChef</span>
+          <span class="header__logo-subtitle">healthy ration</span>
+        </a>
       </div>
     </header>
+
+    <!-- Нижний ярус: навигационная панель на уровне body (теперь реально залипает на всю страницу) -->
+    <nav class="sticky-nav" aria-label="Основная навигация">
+      <div class="container sticky-nav__container">
+        <ul class="sticky-nav__list">
+          <li class="sticky-nav__item">
+            <a class="sticky-nav__link" href="#programs">Программы питания</a>
+          </li>
+          <li class="sticky-nav__item">
+            <a class="sticky-nav__link" href="#lunches">Бизнес-ланчи</a>
+          </li>
+          <li class="sticky-nav__item">
+            <a class="sticky-nav__link" href="#shop">Gastro Shop</a>
+          </li>
+          <li class="sticky-nav__item">
+            <a class="sticky-nav__link" href="#about">О нас</a>
+          </li>
+          <li class="sticky-nav__item">
+            <a class="sticky-nav__link" href="#blog">Блог</a>
+          </li>
+        </ul>
+
+        <div class="sticky-nav__actions">
+          <!-- Исправлена HTML-ошибка: добавлен role="group" для div с aria-label -->
+          <div class="lang-switcher" role="group" aria-label="Выбор языка">
+            <button class="lang-switcher__button lang-switcher__button--active" type="button">RU</button>
+            <button class="lang-switcher__button" type="button">UA</button>
+            <button class="lang-switcher__button" type="button">EN</button>
+          </div>
+
+          <a class="sticky-nav__phone" href="tel:+380689494919">+38 (068) 949-49-19</a>
+        </div>
+      </div>
+    </nav>
 
     <main class="main">
 
@@ -73,7 +69,7 @@
             </div>
 
             <div class="hero__filters">
-              <span class="visually-hidden">Фильтры программ</span>
+              <span class="visually-hidden">Фильтры программ питания</span>
               <ul class="hero__filter-list">
                 <li class="hero__filter-item">
                   <button class="filter-badge filter-badge--active" type="button">Программы 800 - 2400 ккал</button>
@@ -225,7 +221,7 @@
         </div>
       </section>
 
-      <!-- О компании и основателе -->
+      <!-- О компании и основателе (полные тексты из Лабы №2) -->
       <section class="about" id="about">
         <div class="container about__container">
           <h2 class="about__title section-title">О сервисе и нашей команде</h2>
@@ -239,12 +235,12 @@
 
             <article class="about__card">
               <h3 class="about__subtitle">История GastroChef началась более 6-ти лет назад</h3>
-              <p class="about__text">Долгое время я наблюдал, как людям не хватает времени для правильного и здорового питания. Вместе с диетологом мы разработали рационы с точным подсчетом калорий (КБЖУ).</p>
+              <p class="about__text">Долгое время я наблюдал, как людям не хватает времени для правильного и здорового питания. Вместе с профессиональным диетологом мы разработали рационы с точным подсчетом калорий и балансом БЖУ для любых жизненных целей.</p>
             </article>
 
             <article class="about__card">
               <h3 class="about__subtitle">«GastroChef — легко для занятых»</h3>
-              <p class="about__text">Все продукты закупаются только с сертификатами качества, а рационы готовятся на современной кухне ночью перед утренним выездом к вам!</p>
+              <p class="about__text">Все продукты закупаются исключительно с сертификатами качества от проверенных поставщиков. Рационы готовятся на современной кухне ночью перед утренним выездом к вам, сохраняя максимум пользы и свежести!</p>
             </article>
           </div>
         </div>
@@ -261,7 +257,7 @@
         </div>
       </section>
 
-      <!-- Заказ и FAQ (двухколоночный layout) -->
+      <!-- Заказ и FAQ -->
       <div class="order-faq-layout">
         <div class="container order-faq-layout__container">
 
@@ -303,41 +299,41 @@
             </form>
           </section>
 
-          <!-- Часто задаваемые вопросы -->
+          <!-- Часто задаваемые вопросы (полные тексты всех 8 пунктов из Лабы №2) -->
           <section class="faq" id="faq">
             <h2 class="faq__title">Часто задаваемые вопросы</h2>
             <div class="faq__list">
               <details class="faq__item">
                 <summary class="faq__question">Как осуществляется доставка правильного питания?</summary>
-                <p class="faq__answer">Ежедневная бесплатная доставка осуществляется нашей курьерской службой в удобный интервал с 6:00 до 10:00 утра прямо к вашей двери.</p>
+                <p class="faq__answer">Ежедневная бесплатная доставка осуществляется нашей собственной курьерской службой в удобный утренний интервал с 6:00 до 10:00 утра прямо к вашей двери или в офис.</p>
               </details>
               <details class="faq__item">
                 <summary class="faq__question">Можно ли менять время доставки / место?</summary>
-                <p class="faq__answer">Да, вы можете предупредить менеджера об изменении адреса или времени доставки за 12 часов до выезда курьера.</p>
+                <p class="faq__answer">Да, вы можете предупредить менеджера об изменении адреса или времени доставки за 12 часов до планируемого выезда курьера через любой удобный мессенджер.</p>
               </details>
               <details class="faq__item">
                 <summary class="faq__question">Как и в чем приезжает еда?</summary>
-                <p class="faq__answer">Все блюда доставляются в герметичных биоразлагаемых эко-контейнерах, готовых к безопасному разогреву в СВЧ.</p>
+                <p class="faq__answer">Все блюда доставляются в герметичных пищевых эко-контейнерах с маркировкой приемов пищи, готовых к безопасному разогреву в микроволновой печи.</p>
               </details>
               <details class="faq__item">
                 <summary class="faq__question">Когда вы готовите?</summary>
-                <p class="faq__answer">Мы готовим ночью непосредственно перед утренней отправкой, чтобы вы получали максимально свежие блюда.</p>
+                <p class="faq__answer">Мы готовим рационы ночью непосредственно перед утренней отправкой, поэтому вы получаете максимально свежие блюда с сохранением всех полезных нутриентов.</p>
               </details>
               <details class="faq__item">
                 <summary class="faq__question">Какие продукты вы используете?</summary>
-                <p class="faq__answer">Используются исключительно свежие сертифицированные продукты от проверенных поставщиков без сахара и консервантов.</p>
+                <p class="faq__answer">Мы используем исключительно свежие сертифицированные продукты от проверенных поставщиков: фермерское мясо и рыбу, свежие овощи без сахара и химических консервантов.</p>
               </details>
               <details class="faq__item">
                 <summary class="faq__question">Я буду есть одно и то же?</summary>
-                <p class="faq__answer">Нет, наше меню рассчитано на 28 дней без повторения и насчитывает свыше 300 разнообразных блюд.</p>
+                <p class="faq__answer">Нет, наша программа питания рассчитана на 28 дней без повторения и насчитывает свыше 300 авторских рецептов от шеф-повара и нутрициолога.</p>
               </details>
               <details class="faq__item">
-                <summary class="faq__question">У меня аллергия и непереносимость продуктов?</summary>
-                <p class="faq__answer">Мы бесплатно заменяем любые ингредиенты и блюда с учетом ваших индивидуальных аллергий и предпочтений.</p>
+                <summary class="faq__question">У меня аллергия и непереносимость определенных продуктов?</summary>
+                <p class="faq__answer">Мы бесплатно заменяем любые ингредиенты и блюда с учетом ваших индивидуальных аллергий, непереносимости лактозы или глютена и личных вкусовых предпочтений.</p>
               </details>
               <details class="faq__item">
                 <summary class="faq__question">Можно ли замораживать программу?</summary>
-                <p class="faq__answer">Да, вы можете бесплатно приостановить доставку рациона на период отпуска, предупредив нас заранее.</p>
+                <p class="faq__answer">Да, вы можете бесплатно приостановить доставку рациона на период командировки или отпуска, просто предупредив менеджера за сутки.</p>
               </details>
             </div>
           </section>
@@ -345,18 +341,33 @@
         </div>
       </div>
 
-      <!-- Заглушки будущих разделов для корректных якорных ссылок -->
-      <section class="placeholder-section visually-hidden" id="lunches">
-        <h2>Бизнес-ланчи</h2>
+      <!-- Видимые компактные заглушки будущих разделов (исправлено замечание №2) -->
+      <section class="placeholder-section" id="lunches">
+        <div class="container">
+          <h2 class="placeholder-section__title">Бизнес-ланчи</h2>
+          <p class="placeholder-section__text">Раздел находится в разработке. Скоро здесь появится меню корпоративного питания.</p>
+        </div>
       </section>
-      <section class="placeholder-section visually-hidden" id="shop">
-        <h2>Gastro Shop</h2>
+
+      <section class="placeholder-section" id="shop">
+        <div class="container">
+          <h2 class="placeholder-section__title">Gastro Shop</h2>
+          <p class="placeholder-section__text">Раздел находится в разработке. Скоро здесь появится фирменная эко-продукция и десерты без сахара.</p>
+        </div>
       </section>
-      <section class="placeholder-section visually-hidden" id="blog">
-        <h2>Блог</h2>
+
+      <section class="placeholder-section" id="blog">
+        <div class="container">
+          <h2 class="placeholder-section__title">Блог</h2>
+          <p class="placeholder-section__text">Раздел находится в разработке. Полезные статьи о нутрициологии и здоровом образе жизни появятся позже.</p>
+        </div>
       </section>
-      <section class="placeholder-section visually-hidden" id="terms-page">
-        <h2>Условия сотрудничества</h2>
+
+      <section class="placeholder-section" id="terms-page">
+        <div class="container">
+          <h2 class="placeholder-section__title">Условия сотрудничества</h2>
+          <p class="placeholder-section__text">Раздел находится в разработке. Подробный регламент доставки и оплаты будет опубликован в ближайшее время.</p>
+        </div>
       </section>
 
     </main>

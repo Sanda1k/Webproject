@@ -366,18 +366,19 @@
   padding-bottom: var(--space-3xl, 48px);
 }
 
+/* Это Grid Container (родительская сетка) */
 .advantages__list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--space-xl, 24px);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+/* Это Direct Grid Items (прямые элементы сетки) */
 .advantages__item {
-  flex: 1 1 calc(33.333% - 24px);
-  min-width: 260px;
+  min-width: 0;
   padding: var(--space-xl, 24px);
   background-color: var(--color-white, #ffffff);
   border: 1px solid var(--color-border, #e3ebd8);
@@ -568,13 +569,13 @@
 }
 
 .about__grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-xl, 24px);
 }
 
 .about__card {
-  flex: 1 1 300px;
+  min-width: 0;
   padding: var(--space-xl, 24px);
   background-color: var(--color-white, #ffffff);
   border: 1px solid var(--color-border, #e3ebd8);

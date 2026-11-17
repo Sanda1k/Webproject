@@ -230,21 +230,24 @@
 
 .hero__container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-3xl, 48px);
 }
 
 .hero__offer {
-  flex: 1 1 540px;
+  flex: 1 1 min(100%, 480px);
+  min-width: 0;
 }
 
 .hero__title {
   margin-top: 0;
   margin-bottom: var(--space-sm, 12px);
-  font-size: 40px;
+  font-size: clamp(28px, 4.5vw, 40px);
   font-weight: 800;
   line-height: 1.15;
+  overflow-wrap: break-word;
   color: var(--color-dark, #23282b);
 }
 
@@ -336,15 +339,17 @@
 .hero__media {
   display: flex;
   justify-content: center;
-  flex: 1 1 480px;
+  flex: 1 1 min(100%, 420px);
+  min-width: 0;
 }
 
 .hero__circle-bg {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 440px;
-  height: 440px;
+  width: min(100%, 440px);
+  aspect-ratio: 1 / 1;
+  height: auto;
   padding: var(--space-lg, 20px);
   background-color: var(--color-primary, #61bf59);
   border-radius: 50%;
@@ -639,7 +644,8 @@
 
 .order-form-section,
 .faq {
-  flex: 1 1 450px;
+  flex: 1 1 min(100%, 450px);
+  min-width: 0;
 }
 
 .order-form-section__title,
@@ -729,6 +735,7 @@
 
 .order-form__actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--space-sm, 12px);
 }

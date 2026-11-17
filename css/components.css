@@ -925,3 +925,81 @@
 .footer__socials-link:focus-visible {
   outline: 2px solid var(--color-focus, #1b5e20);
 }
+
+/* --------------------------------------------------------------------------
+   11. Адаптивная раскладка (Media Queries) и доступность движения
+   -------------------------------------------------------------------------- */
+
+/* Планшеты и узкие окна: меню и блок действий перестают помещаться в одну строку */
+@media (max-width: 960px) {
+  .sticky-nav__container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm, 12px);
+    padding-top: var(--space-sm, 12px);
+    padding-bottom: var(--space-sm, 12px);
+  }
+
+  .sticky-nav__list {
+    gap: var(--space-md, 16px);
+  }
+
+  .sticky-nav__actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .sticky-nav__phone {
+    white-space: nowrap;
+  }
+}
+
+/* Мобильные экраны: центрируем логотип как в макете и уменьшаем внутренние отступы */
+@media (max-width: 640px) {
+  .header__container {
+    justify-content: center;
+  }
+
+  .hero {
+    padding-top: var(--space-xl, 24px);
+    padding-bottom: var(--space-2xl, 32px);
+  }
+
+  .hero__container {
+    gap: var(--space-xl, 24px);
+  }
+
+  .tariff-card,
+  .order-form {
+    padding: var(--space-lg, 20px);
+  }
+
+  .tariff-card__footer {
+    text-align: center;
+  }
+}
+
+/* Уважение системной настройки уменьшения движения (WCAG / prefers-reduced-motion) */
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .header__logo-link,
+  .sticky-nav__link,
+  .lang-switcher__button,
+  .sticky-nav__phone,
+  .filter-badge,
+  .advantages__item,
+  .programs__tab,
+  .programs__calories-btn,
+  .order-form__input,
+  .faq__item,
+  .faq__question::after {
+    transition: none;
+  }
+
+  .button:active,
+  .header__logo-link:hover,
+  .filter-badge:hover,
+  .advantages__item:hover {
+    transform: none;
+  }
+}

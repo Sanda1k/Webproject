@@ -18,29 +18,30 @@
       </div>
     </header>
 
-    <!-- Нижний ярус: навигационная панель на уровне body (теперь реально залипает на всю страницу) -->
-    <nav class="sticky-nav" aria-label="Основная навигация">
+    <!-- Нижний ярус: панель на уровне body (тег nav оборачивает только ссылки меню) -->
+    <div class="sticky-nav">
       <div class="container sticky-nav__container">
-        <ul class="sticky-nav__list">
-          <li class="sticky-nav__item">
-            <a class="sticky-nav__link" href="#programs">Программы питания</a>
-          </li>
-          <li class="sticky-nav__item">
-            <a class="sticky-nav__link" href="#lunches">Бизнес-ланчи</a>
-          </li>
-          <li class="sticky-nav__item">
-            <a class="sticky-nav__link" href="#shop">Gastro Shop</a>
-          </li>
-          <li class="sticky-nav__item">
-            <a class="sticky-nav__link" href="#about">О нас</a>
-          </li>
-          <li class="sticky-nav__item">
-            <a class="sticky-nav__link" href="#blog">Блог</a>
-          </li>
-        </ul>
+        <nav class="sticky-nav__nav" aria-label="Основная навигация">
+          <ul class="sticky-nav__list">
+            <li class="sticky-nav__item">
+              <a class="sticky-nav__link" href="#programs">Программы питания</a>
+            </li>
+            <li class="sticky-nav__item">
+              <a class="sticky-nav__link" href="#lunches">Бизнес-ланчи</a>
+            </li>
+            <li class="sticky-nav__item">
+              <a class="sticky-nav__link" href="#shop">Gastro Shop</a>
+            </li>
+            <li class="sticky-nav__item">
+              <a class="sticky-nav__link" href="#about">О нас</a>
+            </li>
+            <li class="sticky-nav__item">
+              <a class="sticky-nav__link" href="#blog">Блог</a>
+            </li>
+          </ul>
+        </nav>
 
         <div class="sticky-nav__actions">
-          <!-- Исправлена HTML-ошибка: добавлен role="group" для div с aria-label -->
           <div class="lang-switcher" role="group" aria-label="Выбор языка">
             <button class="lang-switcher__button lang-switcher__button--active" type="button">RU</button>
             <button class="lang-switcher__button" type="button">UA</button>
@@ -50,7 +51,7 @@
           <a class="sticky-nav__phone" href="tel:+380689494919">+38 (068) 949-49-19</a>
         </div>
       </div>
-    </nav>
+    </div>
 
     <main class="main">
 
@@ -221,7 +222,7 @@
         </div>
       </section>
 
-      <!-- О компании и основателе (полные тексты из Лабы №2) -->
+      <!-- О компании и основателе -->
       <section class="about" id="about">
         <div class="container about__container">
           <h2 class="about__title section-title">О сервисе и нашей команде</h2>
@@ -299,7 +300,7 @@
             </form>
           </section>
 
-          <!-- Часто задаваемые вопросы (полные тексты всех 8 пунктов из Лабы №2) -->
+          <!-- Часто задаваемые вопросы -->
           <section class="faq" id="faq">
             <h2 class="faq__title">Часто задаваемые вопросы</h2>
             <div class="faq__list">
@@ -341,7 +342,7 @@
         </div>
       </div>
 
-      <!-- Видимые компактные заглушки будущих разделов (исправлено замечание №2) -->
+      <!-- Видимые компактные заглушки будущих разделов -->
       <section class="placeholder-section" id="lunches">
         <div class="container">
           <h2 class="placeholder-section__title">Бизнес-ланчи</h2>

@@ -120,7 +120,7 @@
 
 .header__logo-subtitle {
   font-size: 11px;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 /* Залипающая навигационная панель на уровне body (залипает на всю страницу) */
@@ -186,8 +186,9 @@
   border: 0;
   border-radius: var(--radius-pill, 9999px);
   background-color: transparent;
-  color: var(--color-muted, #757d8a);
-  transition: all var(--transition-base, 0.2s);
+  color: var(--color-muted, #59606b);
+  transition: background-color var(--transition-base, 0.2s),
+              color var(--transition-base, 0.2s);
 }
 
 .lang-switcher__button:hover {
@@ -275,7 +276,7 @@
 .hero__card-text {
   margin-top: 0;
   margin-bottom: var(--space-sm, 12px);
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 .hero__card-price {
@@ -401,7 +402,7 @@
 .advantages__item-text {
   margin: 0;
   font-size: 14px;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 /* --------------------------------------------------------------------------
@@ -425,8 +426,9 @@
   background-color: var(--color-white, #ffffff);
   border: 1px solid var(--color-border, #e3ebd8);
   border-radius: var(--radius-pill, 9999px);
-  color: var(--color-muted, #757d8a);
-  transition: all var(--transition-base, 0.2s);
+  color: var(--color-muted, #59606b);
+  transition: color var(--transition-base, 0.2s),
+              border-color var(--transition-base, 0.2s);
 }
 
 .programs__tab:hover {
@@ -461,7 +463,9 @@
   border: 1px solid var(--color-border, #e3ebd8);
   border-radius: var(--radius-sm, 8px);
   color: var(--color-dark, #23282b);
-  transition: all var(--transition-base, 0.2s);
+  transition: background-color var(--transition-base, 0.2s),
+              border-color var(--transition-base, 0.2s),
+              color var(--transition-base, 0.2s);
 }
 
 .programs__calories-btn:hover {
@@ -499,7 +503,7 @@
 
 .tariff-card__description {
   margin: 0;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 .tariff-card__details {
@@ -588,7 +592,7 @@
   margin-top: 0;
   margin-bottom: var(--space-md, 16px);
   font-size: 14px;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 .gallery {
@@ -614,7 +618,7 @@
 .gallery__caption {
   padding: var(--space-md, 16px);
   font-size: 14px;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 /* --------------------------------------------------------------------------
@@ -648,7 +652,7 @@
 .order-form-section__description {
   margin-top: 0;
   margin-bottom: var(--space-xl, 24px);
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 .order-form {
@@ -698,7 +702,7 @@
   padding: 0 var(--space-xs, 8px);
   font-size: 13px;
   font-weight: 600;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 .order-form__checkbox-group {
@@ -731,7 +735,7 @@
 .order-form__divider {
   font-size: 12px;
   font-weight: 700;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 /* FAQ */
@@ -796,11 +800,11 @@
   margin: var(--space-sm, 12px) 0 0 0;
   font-size: 14px;
   line-height: 1.5;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 /* --------------------------------------------------------------------------
-   9. Видимые компактные заглушки для якорных ссылок (исправление замечания №2)
+   9. Видимые компактные заглушки для якорных ссылок
    -------------------------------------------------------------------------- */
 .placeholder-section {
   padding-top: var(--space-2xl, 32px);
@@ -820,7 +824,7 @@
 .placeholder-section__text {
   margin: 0;
   font-size: 14px;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 /* --------------------------------------------------------------------------
@@ -851,7 +855,7 @@
 .footer__logo-subtitle {
   margin: 0;
   font-size: 12px;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 .footer__nav-list {
@@ -903,7 +907,7 @@
 
 .footer__socials-link {
   font-size: 13px;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 .footer__socials-link:hover {

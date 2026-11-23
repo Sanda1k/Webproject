@@ -120,7 +120,7 @@
 
 .header__logo-subtitle {
   font-size: 11px;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 /* Залипающая навигационная панель на уровне body (залипает на всю страницу) */
@@ -186,8 +186,9 @@
   border: 0;
   border-radius: var(--radius-pill, 9999px);
   background-color: transparent;
-  color: var(--color-muted, #757d8a);
-  transition: all var(--transition-base, 0.2s);
+  color: var(--color-muted, #59606b);
+  transition: background-color var(--transition-base, 0.2s),
+              color var(--transition-base, 0.2s);
 }
 
 .lang-switcher__button:hover {
@@ -229,21 +230,24 @@
 
 .hero__container {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-3xl, 48px);
 }
 
 .hero__offer {
-  flex: 1 1 540px;
+  flex: 1 1 min(100%, 480px);
+  min-width: 0;
 }
 
 .hero__title {
   margin-top: 0;
   margin-bottom: var(--space-sm, 12px);
-  font-size: 40px;
+  font-size: clamp(28px, 4.5vw, 40px);
   font-weight: 800;
   line-height: 1.15;
+  overflow-wrap: break-word;
   color: var(--color-dark, #23282b);
 }
 
@@ -275,7 +279,7 @@
 .hero__card-text {
   margin-top: 0;
   margin-bottom: var(--space-sm, 12px);
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 .hero__card-price {
@@ -335,15 +339,17 @@
 .hero__media {
   display: flex;
   justify-content: center;
-  flex: 1 1 480px;
+  flex: 1 1 min(100%, 420px);
+  min-width: 0;
 }
 
 .hero__circle-bg {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 440px;
-  height: 440px;
+  width: min(100%, 440px);
+  aspect-ratio: 1 / 1;
+  height: auto;
   padding: var(--space-lg, 20px);
   background-color: var(--color-primary, #61bf59);
   border-radius: 50%;
@@ -365,18 +371,19 @@
   padding-bottom: var(--space-3xl, 48px);
 }
 
+/* Это Grid Container (родительская сетка) */
 .advantages__list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--space-xl, 24px);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+/* Это Direct Grid Items (прямые элементы сетки) */
 .advantages__item {
-  flex: 1 1 calc(33.333% - 24px);
-  min-width: 260px;
+  min-width: 0;
   padding: var(--space-xl, 24px);
   background-color: var(--color-white, #ffffff);
   border: 1px solid var(--color-border, #e3ebd8);
@@ -401,7 +408,7 @@
 .advantages__item-text {
   margin: 0;
   font-size: 14px;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 /* --------------------------------------------------------------------------
@@ -425,8 +432,9 @@
   background-color: var(--color-white, #ffffff);
   border: 1px solid var(--color-border, #e3ebd8);
   border-radius: var(--radius-pill, 9999px);
-  color: var(--color-muted, #757d8a);
-  transition: all var(--transition-base, 0.2s);
+  color: var(--color-muted, #59606b);
+  transition: color var(--transition-base, 0.2s),
+              border-color var(--transition-base, 0.2s);
 }
 
 .programs__tab:hover {
@@ -461,7 +469,9 @@
   border: 1px solid var(--color-border, #e3ebd8);
   border-radius: var(--radius-sm, 8px);
   color: var(--color-dark, #23282b);
-  transition: all var(--transition-base, 0.2s);
+  transition: background-color var(--transition-base, 0.2s),
+              border-color var(--transition-base, 0.2s),
+              color var(--transition-base, 0.2s);
 }
 
 .programs__calories-btn:hover {
@@ -499,7 +509,7 @@
 
 .tariff-card__description {
   margin: 0;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 .tariff-card__details {
@@ -564,13 +574,13 @@
 }
 
 .about__grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--space-xl, 24px);
 }
 
 .about__card {
-  flex: 1 1 300px;
+  min-width: 0;
   padding: var(--space-xl, 24px);
   background-color: var(--color-white, #ffffff);
   border: 1px solid var(--color-border, #e3ebd8);
@@ -588,7 +598,7 @@
   margin-top: 0;
   margin-bottom: var(--space-md, 16px);
   font-size: 14px;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 .gallery {
@@ -614,7 +624,7 @@
 .gallery__caption {
   padding: var(--space-md, 16px);
   font-size: 14px;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 /* --------------------------------------------------------------------------
@@ -634,7 +644,8 @@
 
 .order-form-section,
 .faq {
-  flex: 1 1 450px;
+  flex: 1 1 min(100%, 450px);
+  min-width: 0;
 }
 
 .order-form-section__title,
@@ -648,7 +659,7 @@
 .order-form-section__description {
   margin-top: 0;
   margin-bottom: var(--space-xl, 24px);
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 .order-form {
@@ -698,7 +709,7 @@
   padding: 0 var(--space-xs, 8px);
   font-size: 13px;
   font-weight: 600;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 .order-form__checkbox-group {
@@ -724,6 +735,7 @@
 
 .order-form__actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--space-sm, 12px);
 }
@@ -731,7 +743,7 @@
 .order-form__divider {
   font-size: 12px;
   font-weight: 700;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 /* FAQ */
@@ -796,11 +808,11 @@
   margin: var(--space-sm, 12px) 0 0 0;
   font-size: 14px;
   line-height: 1.5;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 /* --------------------------------------------------------------------------
-   9. Видимые компактные заглушки для якорных ссылок (исправление замечания №2)
+   9. Видимые компактные заглушки для якорных ссылок
    -------------------------------------------------------------------------- */
 .placeholder-section {
   padding-top: var(--space-2xl, 32px);
@@ -820,7 +832,7 @@
 .placeholder-section__text {
   margin: 0;
   font-size: 14px;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 /* --------------------------------------------------------------------------
@@ -851,7 +863,7 @@
 .footer__logo-subtitle {
   margin: 0;
   font-size: 12px;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 .footer__nav-list {
@@ -903,7 +915,7 @@
 
 .footer__socials-link {
   font-size: 13px;
-  color: var(--color-muted, #757d8a);
+  color: var(--color-muted, #59606b);
 }
 
 .footer__socials-link:hover {
@@ -912,4 +924,82 @@
 
 .footer__socials-link:focus-visible {
   outline: 2px solid var(--color-focus, #1b5e20);
+}
+
+/* --------------------------------------------------------------------------
+   11. Адаптивная раскладка (Media Queries) и доступность движения
+   -------------------------------------------------------------------------- */
+
+/* Планшеты и узкие окна: меню и блок действий перестают помещаться в одну строку */
+@media (max-width: 960px) {
+  .sticky-nav__container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm, 12px);
+    padding-top: var(--space-sm, 12px);
+    padding-bottom: var(--space-sm, 12px);
+  }
+
+  .sticky-nav__list {
+    gap: var(--space-md, 16px);
+  }
+
+  .sticky-nav__actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .sticky-nav__phone {
+    white-space: nowrap;
+  }
+}
+
+/* Мобильные экраны: центрируем логотип как в макете и уменьшаем внутренние отступы */
+@media (max-width: 640px) {
+  .header__container {
+    justify-content: center;
+  }
+
+  .hero {
+    padding-top: var(--space-xl, 24px);
+    padding-bottom: var(--space-2xl, 32px);
+  }
+
+  .hero__container {
+    gap: var(--space-xl, 24px);
+  }
+
+  .tariff-card,
+  .order-form {
+    padding: var(--space-lg, 20px);
+  }
+
+  .tariff-card__footer {
+    text-align: center;
+  }
+}
+
+/* Уважение системной настройки уменьшения движения (WCAG / prefers-reduced-motion) */
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .header__logo-link,
+  .sticky-nav__link,
+  .lang-switcher__button,
+  .sticky-nav__phone,
+  .filter-badge,
+  .advantages__item,
+  .programs__tab,
+  .programs__calories-btn,
+  .order-form__input,
+  .faq__item,
+  .faq__question::after {
+    transition: none;
+  }
+
+  .button:active,
+  .header__logo-link:hover,
+  .filter-badge:hover,
+  .advantages__item:hover {
+    transform: none;
+  }
 }

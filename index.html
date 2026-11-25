@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gastro Chef — сервис доставки здорового питания</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="scripts/script.js" defer></script>
   </head>
   <body class="page">
 
@@ -99,6 +100,34 @@
               <img class="hero__image" src="assets/images/dish-example.jpg" alt="Свежие смузи и рацион правильного питания Gastro Chef" width="460" height="460">
             </div>
           </div>
+        </div>
+      </section>
+
+      <!-- Направления рационов -->
+      <section class="categories" id="categories" aria-labelledby="categories-title">
+        <div class="container">
+          <h2 class="categories__title section-title" id="categories-title">Направления питания</h2>
+
+          <ul class="categories__list" data-categories-list></ul>
+
+          <div class="categories__state">
+            <p class="categories__status" role="status" data-categories-status></p>
+            <button class="button button--secondary" type="button" data-categories-retry hidden>Повторить</button>
+          </div>
+
+          <noscript>
+            <p class="categories__status">Направления питания загружаются с помощью JavaScript. Включите его в браузере.</p>
+          </noscript>
+
+          <template id="category-card-template">
+            <li class="category-card">
+              <span class="category-card__icon-wrap" aria-hidden="true">
+                <img class="category-card__icon" src="assets/images/icon/kcal.svg" alt="" width="72" height="72">
+              </span>
+              <h3 class="category-card__title"></h3>
+              <p class="category-card__text"></p>
+            </li>
+          </template>
         </div>
       </section>
 

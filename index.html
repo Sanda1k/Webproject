@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gastro Chef — сервис доставки здорового питания</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="scripts/script.js" defer></script>
   </head>
   <body class="page">
 
@@ -102,6 +103,34 @@
         </div>
       </section>
 
+      <!-- Направления рационов (загружаются из data/categories.json) -->
+      <section class="categories" id="categories" aria-labelledby="categories-title">
+        <div class="container">
+          <h2 class="categories__title section-title" id="categories-title">Направления питания</h2>
+
+          <ul class="categories__list" data-categories-list></ul>
+
+          <div class="categories__state">
+            <p class="categories__status" role="status" data-categories-status></p>
+            <button class="button button--secondary" type="button" data-categories-retry hidden>Повторить</button>
+          </div>
+
+          <noscript>
+            <p class="categories__status">Направления питания загружаются с помощью JavaScript. Включите его в браузере.</p>
+          </noscript>
+
+          <template id="category-card-template">
+            <li class="category-card">
+              <span class="category-card__icon-wrap" aria-hidden="true">
+                <img class="category-card__icon" src="assets/images/icon/kcal.png" alt="" width="72" height="72">
+              </span>
+              <h3 class="category-card__title"></h3>
+              <p class="category-card__text"></p>
+            </li>
+          </template>
+        </div>
+      </section>
+
       <!-- Преимущества сервиса -->
       <section class="advantages" id="advantages">
         <div class="container">
@@ -147,44 +176,44 @@
 
           <ul class="programs__calories-nav">
             <li class="programs__calories-item">
-              <button class="programs__calories-btn" type="button">EXPRESS FIT (800 ккал)</button>
+              <button class="programs__calories-btn" type="button" aria-pressed="false" data-tariff="express">EXPRESS FIT (800 ккал)</button>
             </li>
             <li class="programs__calories-item">
-              <button class="programs__calories-btn" type="button">SLIM (1000 ккал)</button>
+              <button class="programs__calories-btn" type="button" aria-pressed="false" data-tariff="slim">SLIM (1000 ккал)</button>
             </li>
             <li class="programs__calories-item">
-              <button class="programs__calories-btn programs__calories-btn--active" type="button">FITNESS (1300 ккал)</button>
+              <button class="programs__calories-btn programs__calories-btn--active" type="button" aria-pressed="true" data-tariff="fitness">FITNESS (1300 ккал)</button>
             </li>
             <li class="programs__calories-item">
-              <button class="programs__calories-btn" type="button">BALANCE (1600 ккал)</button>
+              <button class="programs__calories-btn" type="button" aria-pressed="false" data-tariff="balance">BALANCE (1600 ккал)</button>
             </li>
             <li class="programs__calories-item">
-              <button class="programs__calories-btn" type="button">BALANCE + (1800 ккал)</button>
+              <button class="programs__calories-btn" type="button" aria-pressed="false" data-tariff="balance-plus">BALANCE + (1800 ккал)</button>
             </li>
             <li class="programs__calories-item">
-              <button class="programs__calories-btn" type="button">STRONG (2000 ккал)</button>
+              <button class="programs__calories-btn" type="button" aria-pressed="false" data-tariff="strong">STRONG (2000 ккал)</button>
             </li>
             <li class="programs__calories-item">
-              <button class="programs__calories-btn" type="button">MAXI FIT (2400 ккал)</button>
+              <button class="programs__calories-btn" type="button" aria-pressed="false" data-tariff="maxi">MAXI FIT (2400 ккал)</button>
             </li>
           </ul>
 
-          <article class="tariff-card">
+          <article class="tariff-card" data-tariff-card>
             <header class="tariff-card__header">
-              <h3 class="tariff-card__title">Тариф FITNESS — 1300 ккал</h3>
-              <p class="tariff-card__description">Программа здорового питания Express Fit. Идеально для снижения веса, повышения энергии и сил при сидячем образе жизни.</p>
+              <h3 class="tariff-card__title" data-tariff-title>Тариф FITNESS — 1300 ккал</h3>
+              <p class="tariff-card__description" data-tariff-description>Программа здорового питания Fitness. Идеально для снижения веса, повышения энергии и сил при сидячем образе жизни.</p>
             </header>
 
             <div class="tariff-card__details">
               <div class="tariff-card__prices">
                 <h4 class="tariff-card__subtitle">Стоимость рациона:</h4>
                 <ul class="tariff-card__price-list">
-                  <li class="tariff-card__price-item">Тестовый день: <strong>387 грн</strong></li>
-                  <li class="tariff-card__price-item">1 день: <strong>510 грн</strong></li>
-                  <li class="tariff-card__price-item">от 7 дней: <strong>490 грн/день</strong></li>
-                  <li class="tariff-card__price-item">от 14 дней: <strong>470 грн/день</strong></li>
-                  <li class="tariff-card__price-item">от 30 дней: <strong>445 грн/день</strong></li>
-                  <li class="tariff-card__price-item">Завтрак и ужин: <strong>433 грн</strong> (-15%)</li>
+                  <li class="tariff-card__price-item">Тестовый день: <strong data-tariff-price>387 грн</strong></li>
+                  <li class="tariff-card__price-item">1 день: <strong data-tariff-price>510 грн</strong></li>
+                  <li class="tariff-card__price-item">от 7 дней: <strong data-tariff-price>490 грн/день</strong></li>
+                  <li class="tariff-card__price-item">от 14 дней: <strong data-tariff-price>470 грн/день</strong></li>
+                  <li class="tariff-card__price-item">от 30 дней: <strong data-tariff-price>445 грн/день</strong></li>
+                  <li class="tariff-card__price-item">Завтрак и ужин: <strong data-tariff-price>433 грн</strong> (-15%)</li>
                 </ul>
               </div>
 
@@ -303,36 +332,50 @@
           <!-- Часто задаваемые вопросы -->
           <section class="faq" id="faq">
             <h2 class="faq__title">Часто задаваемые вопросы</h2>
+
+            <div class="faq__search">
+              <label class="faq__search-label" for="faq-search">Поиск по вопросам</label>
+              <input
+                class="faq__search-input"
+                type="search"
+                id="faq-search"
+                placeholder="Например: доставка, аллергия, заморозка..."
+                autocomplete="off"
+                data-faq-search
+              >
+              <p class="faq__status" role="status" data-faq-status></p>
+            </div>
+
             <div class="faq__list">
-              <details class="faq__item">
+              <details class="faq__item" data-faq-item>
                 <summary class="faq__question">Как осуществляется доставка правильного питания?</summary>
                 <p class="faq__answer">Ежедневная бесплатная доставка осуществляется нашей собственной курьерской службой в удобный утренний интервал с 6:00 до 10:00 утра прямо к вашей двери или в офис.</p>
               </details>
-              <details class="faq__item">
+              <details class="faq__item" data-faq-item>
                 <summary class="faq__question">Можно ли менять время доставки / место?</summary>
                 <p class="faq__answer">Да, вы можете предупредить менеджера об изменении адреса или времени доставки за 12 часов до планируемого выезда курьера через любой удобный мессенджер.</p>
               </details>
-              <details class="faq__item">
+              <details class="faq__item" data-faq-item>
                 <summary class="faq__question">Как и в чем приезжает еда?</summary>
                 <p class="faq__answer">Все блюда доставляются в герметичных пищевых эко-контейнерах с маркировкой приемов пищи, готовых к безопасному разогреву в микроволновой печи.</p>
               </details>
-              <details class="faq__item">
+              <details class="faq__item" data-faq-item>
                 <summary class="faq__question">Когда вы готовите?</summary>
                 <p class="faq__answer">Мы готовим рационы ночью непосредственно перед утренней отправкой, поэтому вы получаете максимально свежие блюда с сохранением всех полезных нутриентов.</p>
               </details>
-              <details class="faq__item">
+              <details class="faq__item" data-faq-item>
                 <summary class="faq__question">Какие продукты вы используете?</summary>
                 <p class="faq__answer">Мы используем исключительно свежие сертифицированные продукты от проверенных поставщиков: фермерское мясо и рыбу, свежие овощи без сахара и химических консервантов.</p>
               </details>
-              <details class="faq__item">
+              <details class="faq__item" data-faq-item>
                 <summary class="faq__question">Я буду есть одно и то же?</summary>
                 <p class="faq__answer">Нет, наша программа питания рассчитана на 28 дней без повторения и насчитывает свыше 300 авторских рецептов от шеф-повара и нутрициолога.</p>
               </details>
-              <details class="faq__item">
+              <details class="faq__item" data-faq-item>
                 <summary class="faq__question">У меня аллергия и непереносимость определенных продуктов?</summary>
                 <p class="faq__answer">Мы бесплатно заменяем любые ингредиенты и блюда с учетом ваших индивидуальных аллергий, непереносимости лактозы или глютена и личных вкусовых предпочтений.</p>
               </details>
-              <details class="faq__item">
+              <details class="faq__item" data-faq-item>
                 <summary class="faq__question">Можно ли замораживать программу?</summary>
                 <p class="faq__answer">Да, вы можете бесплатно приостановить доставку рациона на период командировки или отпуска, просто предупредив менеджера за сутки.</p>
               </details>

@@ -146,3 +146,36 @@ if (tariffButtons.length > 0 && tariffTitle && tariffDescription && tariffPrices
 
   renderTariff();
 }
+
+/* 3. Сценарий 2: живой поиск по вопросам FAQ */
+
+const faqSearchInput = document.querySelector('[data-faq-search]');
+const faqItems = document.querySelectorAll('[data-faq-item]');
+const faqStatus = document.querySelector('[data-faq-status]');
+
+if (faqSearchInput && faqItems.length > 0 && faqStatus) {
+  const filterFaqItems = () => {
+    const query = faqSearchInput.value.trim().toLowerCase();
+    let visibleCount = 0;
+
+    faqItems.forEach((item) => {
+      const isMatch = item.textContent.toLowerCase().includes(query);
+      item.hidden = !isMatch;
+
+      if (isMatch) {
+        visibleCount += 1;
+      }
+    });
+
+    if (query === '') {
+      faqStatus.textContent = '';
+    } else if (visibleCount === 0) {
+      faqStatus.textContent = 'По вашему запросу ничего не найдено';
+    } else {
+      faqStatus.textContent = `Найдено вопросов: ${visibleCount}`;
+    }
+  };
+
+  faqSearchInput.addEventListener('input', filterFaqItems);
+  filterFaqItems();
+}

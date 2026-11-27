@@ -1086,3 +1086,44 @@
     transform: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+   13. Поиск по вопросам FAQ
+   -------------------------------------------------------------------------- */
+.faq__search {
+  margin-bottom: var(--space-md, 16px);
+}
+
+.faq__search-label {
+  display: block;
+  margin-bottom: var(--space-xs, 8px);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-dark, #23282b);
+}
+
+.faq__search-input {
+  width: 100%;
+  padding: 12px 16px;
+  font: inherit;
+  color: var(--color-dark, #23282b);
+  background-color: var(--color-white, #ffffff);
+  border: 1px solid var(--color-border, #e3ebd8);
+  border-radius: var(--radius-md, 16px);
+}
+
+.faq__search-input:focus-visible {
+  outline: 2px solid var(--color-primary, #64d370);
+  outline-offset: 2px;
+}
+
+.faq__status {
+  margin: var(--space-xs, 8px) 0 0;
+  min-height: 20px;
+  font-size: 14px;
+  color: var(--color-muted, #59606b);
+}
+
+.faq__item[hidden] {
+  display: none;
+}
